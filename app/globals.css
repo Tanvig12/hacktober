@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #f6f4ef;
+  --color-ink: #1a1a1a;
+  --color-muted: #5c5a55;
+  --color-line: #dad6cc;
+  --color-accent: #1f5f3f;
+  --color-danger: #b42318;
+  --color-caution: #b54708;
+  --color-safe: #067647;
+
+  /* Five sizes only, so nothing outside the scale can creep in. */
+  --text-*: initial;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.25rem;
+  --text-base: 1rem;
+  --text-base--line-height: 1.5rem;
+  --text-lg: 1.25rem;
+  --text-lg--line-height: 1.75rem;
+  --text-xl: 1.75rem;
+  --text-xl--line-height: 2.25rem;
+  --text-2xl: 2.5rem;
+  --text-2xl--line-height: 3rem;
+
+  --radius-*: initial;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+}
+
+@theme inline {
+  --font-sans: var(--font-plex-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, monospace;
+}
+
+@layer base {
+  body {
+    @apply bg-paper font-sans text-base text-ink antialiased;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-accent;
+  }
+}
