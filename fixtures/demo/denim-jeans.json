@@ -1,0 +1,106 @@
+{
+  "object_name": "Worn cotton denim jeans",
+  "confidence": "high",
+  "condition": "Faded indigo denim with frayed hems, a torn right knee and a zip that no longer stays closed. The rest of the fabric is strong.",
+  "materials": [
+    { "part": "legs and seat", "material": "cotton denim" },
+    { "part": "pocket linings", "material": "polyester-cotton twill" },
+    { "part": "zip", "material": "brass teeth on polyester tape" },
+    { "part": "button and rivets", "material": "zinc alloy and copper" }
+  ],
+  "safety": {
+    "is_hazardous": false,
+    "contamination_risk": "low",
+    "hazards": [],
+    "handling_warning": "Wash and dry the jeans before cutting so the fabric lies flat."
+  },
+  "concepts": [
+    {
+      "kind": "repair",
+      "title": "Patch the knee and replace the zip",
+      "description": "Back the torn knee with a denim patch and fit a new brass zip so the jeans can be worn again.",
+      "difficulty": "medium",
+      "time_minutes": 90,
+      "tools": ["sewing machine", "denim needle", "seam ripper", "pins"],
+      "steps": [
+        "Turn the jeans inside out and trim loose threads around the tear.",
+        "Cut a patch from an offcut of similar denim, 3 cm larger than the tear on every side.",
+        "Pin the patch inside the knee and sew rows of straight stitches across the tear to hold the frayed edges.",
+        "Unpick the old zip with a seam ripper, keeping the fly shield intact.",
+        "Pin the new zip in place and stitch it along the original stitch lines.",
+        "Turn up the frayed hems by 2 cm and stitch them with a double row."
+      ],
+      "image_prompt": "A pair of faded blue denim jeans with a neat visible-mending patch on the right knee and a new brass zip, folded on a table"
+    },
+    {
+      "kind": "repurpose",
+      "title": "Denim tote bag",
+      "description": "Turn the legs into a sturdy shopping tote with the waistband pockets kept on the front.",
+      "difficulty": "easy",
+      "time_minutes": 60,
+      "tools": ["fabric scissors", "sewing machine", "pins"],
+      "steps": [
+        "Cut straight across both legs 5 cm below the crotch.",
+        "Unpick the inside leg seam so the seat and front lie as one open panel.",
+        "Turn it inside out and sew across the bottom to close it.",
+        "Cut two 60 cm strips from a leg for the handles and fold each into a tube.",
+        "Stitch the handles inside the waistband on the front and back.",
+        "Turn the bag right side out and press the seams."
+      ],
+      "image_prompt": "A tote bag sewn from the top of faded blue denim jeans, with the back pockets on the front and denim strap handles"
+    },
+    {
+      "kind": "upcycle",
+      "title": "Quilted denim laptop sleeve",
+      "description": "Piece the remaining leg panels into a padded sleeve with the copper rivets kept as a detail.",
+      "difficulty": "hard",
+      "time_minutes": 150,
+      "tools": [
+        "rotary cutter",
+        "cutting mat",
+        "sewing machine",
+        "quilt wadding",
+        "pins"
+      ],
+      "steps": [
+        "Measure the laptop and add 3 cm to each side for seams and ease.",
+        "Cut 10 cm squares from the leg panels in a mix of faded and darker shades.",
+        "Sew the squares into two panels the size of your measurement.",
+        "Layer each panel over cotton wadding and stitch straight lines 2 cm apart to quilt it.",
+        "Sew the panels together on three sides, then bind the opening with a strip of waistband.",
+        "Add a fastening loop cut from a belt loop and sew the button on the front."
+      ],
+      "image_prompt": "A quilted laptop sleeve made from patchwork squares of faded and dark blue denim, with a denim button closure"
+    }
+  ],
+  "recovery_plan": [
+    {
+      "component": "denim offcuts",
+      "material": "cotton denim",
+      "action": "reuse",
+      "destination": "Keep as cleaning rags, or give to a local tailor for patches"
+    },
+    {
+      "component": "pocket linings",
+      "material": "polyester-cotton twill",
+      "action": "recycle",
+      "destination": "Textile collection at a municipal dry-waste centre"
+    },
+    {
+      "component": "zip, button and rivets",
+      "material": "brass, zinc alloy and copper",
+      "action": "recycle",
+      "destination": "Kabadiwala (local scrap dealer) with other mixed metals"
+    },
+    {
+      "component": "small cotton threads and lint",
+      "material": "cotton fibre",
+      "action": "compost",
+      "destination": "Home compost or municipal wet-waste collection"
+    }
+  ],
+  "impact_estimate": {
+    "landfill_diverted_kg": 0.6,
+    "co2e_saved_kg": 7.5
+  }
+}

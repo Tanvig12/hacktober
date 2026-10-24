@@ -1,0 +1,92 @@
+{
+  "object_name": "1-litre PET water bottle",
+  "confidence": "high",
+  "condition": "Empty and intact with its screw cap and wrap-around label. Light scuffing on the body, no cracks or residue.",
+  "materials": [
+    { "part": "bottle body", "material": "PET plastic" },
+    { "part": "screw cap", "material": "HDPE plastic" },
+    { "part": "label", "material": "polypropylene film" }
+  ],
+  "safety": {
+    "is_hazardous": false,
+    "contamination_risk": "low",
+    "hazards": [],
+    "handling_warning": "Rinse with water and let it dry before cutting."
+  },
+  "concepts": [
+    {
+      "kind": "repurpose",
+      "title": "Self-watering herb planter",
+      "description": "Cut the bottle in two and turn the top into a wicking pot that sits in its own water reservoir.",
+      "difficulty": "easy",
+      "time_minutes": 25,
+      "tools": ["craft knife", "scissors", "cotton string", "hot nail"],
+      "steps": [
+        "Peel off the label and mark a line 12 cm up from the base.",
+        "Score the line with a craft knife, then finish the cut with scissors.",
+        "Heat a nail and push it through the centre of the cap to make a wick hole.",
+        "Thread a 20 cm length of cotton string through the cap, knotting it on the inside.",
+        "Turn the top half upside down into the base so the wick hangs into the reservoir.",
+        "Fill the top with potting mix, plant a tulsi or mint cutting and fill the base with water."
+      ],
+      "image_prompt": "A clear 1-litre PET water bottle cut in half and turned into a self-watering planter with a mint plant growing in the top section, a cotton wick reaching into water in the base"
+    },
+    {
+      "kind": "repurpose",
+      "title": "Slow drip feeder for potted plants",
+      "description": "Push the capped bottle into the soil so it releases water to the roots over a day or two.",
+      "difficulty": "easy",
+      "time_minutes": 10,
+      "tools": ["hot nail"],
+      "steps": [
+        "Remove the label and rinse the bottle.",
+        "Heat a nail and make three small holes in the cap.",
+        "Fill the bottle with water and screw the cap on tightly.",
+        "Push the bottle neck-down into the soil beside the plant until it stands on its own.",
+        "Refill when empty; widen the holes if it drains slower than every two days."
+      ],
+      "image_prompt": "A clear PET water bottle pushed upside down into the soil of a terracotta pot as a slow drip feeder for a chilli plant"
+    },
+    {
+      "kind": "upcycle",
+      "title": "PET garden twine",
+      "description": "Cut the body into one long continuous strip to make strong, weatherproof twine for tying up plants.",
+      "difficulty": "medium",
+      "time_minutes": 40,
+      "tools": ["bottle cutter jig", "craft knife", "ruler"],
+      "steps": [
+        "Cut off the base cleanly so the body is an open cylinder.",
+        "Set the bottle cutter jig to a 5 mm strip width.",
+        "Start a strip at the cut edge and pull the bottle through the jig in one steady motion.",
+        "Stop where the shoulder begins to curve and trim the strip there.",
+        "Wind the strip around a piece of card to keep it flat.",
+        "Use it to tie tomato and bean plants to their stakes; it will not rot in the rain."
+      ],
+      "image_prompt": "A neat spool of thin clear plastic twine made from a cut PET water bottle, wound on a cardboard holder"
+    }
+  ],
+  "recovery_plan": [
+    {
+      "component": "bottle body",
+      "material": "PET plastic",
+      "action": "recycle",
+      "destination": "Kabadiwala (local scrap dealer); PET has steady resale value"
+    },
+    {
+      "component": "screw cap",
+      "material": "HDPE plastic",
+      "action": "recycle",
+      "destination": "Kabadiwala (local scrap dealer), kept separate from the PET body"
+    },
+    {
+      "component": "label",
+      "material": "polypropylene film",
+      "action": "recycle",
+      "destination": "Municipal dry-waste collection"
+    }
+  ],
+  "impact_estimate": {
+    "landfill_diverted_kg": 0.03,
+    "co2e_saved_kg": 0.09
+  }
+}

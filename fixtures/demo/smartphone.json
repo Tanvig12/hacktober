@@ -1,0 +1,53 @@
+{
+  "object_name": "Old smartphone with a swollen battery",
+  "confidence": "high",
+  "condition": "The back panel is pushed out by a swollen lithium-ion battery and the screen has lifted at one corner. The phone does not power on.",
+  "materials": [
+    { "part": "battery", "material": "lithium-ion battery" },
+    { "part": "screen", "material": "glass and LCD panel" },
+    { "part": "main board", "material": "circuit board with precious metals" },
+    { "part": "frame", "material": "aluminium" },
+    { "part": "back panel", "material": "polycarbonate plastic" }
+  ],
+  "safety": {
+    "is_hazardous": true,
+    "contamination_risk": "low",
+    "hazards": [
+      "Swollen lithium-ion battery that can catch fire if pressed, punctured or charged",
+      "Circuit board and electronic components (e-waste)",
+      "Screen glass that may crack as the battery expands"
+    ],
+    "handling_warning": "Do not charge, press or open the phone. Keep it in a metal tin or on a non-flammable surface, away from heat, until you drop it off."
+  },
+  "concepts": [],
+  "recovery_plan": [
+    {
+      "component": "battery",
+      "material": "lithium-ion battery",
+      "action": "hazardous-drop-off",
+      "destination": "Authorised e-waste recycler or brand take-back point; tell them the battery is swollen"
+    },
+    {
+      "component": "main board",
+      "material": "circuit board with precious metals",
+      "action": "e-waste",
+      "destination": "Authorised e-waste recycler"
+    },
+    {
+      "component": "screen",
+      "material": "glass and LCD panel",
+      "action": "e-waste",
+      "destination": "Authorised e-waste recycler, left attached to the phone"
+    },
+    {
+      "component": "frame and back panel",
+      "material": "aluminium and polycarbonate plastic",
+      "action": "e-waste",
+      "destination": "Authorised e-waste recycler as one unit; do not take it apart"
+    }
+  ],
+  "impact_estimate": {
+    "landfill_diverted_kg": 0.18,
+    "co2e_saved_kg": 1.2
+  }
+}
