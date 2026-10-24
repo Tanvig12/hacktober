@@ -6,8 +6,12 @@ import { ANALYZE_REQUEST, SYSTEM_INSTRUCTION } from "./prompt";
 import { analysisResponseSchema } from "./gemini-schema";
 import { AnalysisSchema } from "./schema";
 
-// Shared by both attempts so a fallback cannot push the request past the route's maxDuration.
-const TIMEOUT_MS = 45_000;
+type Timeouts = { primaryMs: number; totalMs: number };
+
+// An overloaded primary often stalls instead of returning 503, so it gets its own
+// shorter budget. The total budget is shared so a fallback cannot push the request
+// past the route's maxDuration.
+const DEFAULT_TIMEOUTS: Timeouts = { primaryMs: 20_000, totalMs: 45_000 };
 const FALLBACK_STATUSES = new Set([429, 503]);
 
 export class RateLimitError extends Error {
@@ -31,21 +35,28 @@ function getClient(): GoogleGenAI {
   return client;
 }
 
-export async function analyzeImage(image: ImageInput): Promise<Analysis> {
+export async function analyzeImage(
+  image: ImageInput,
+  timeouts: Timeouts = DEFAULT_TIMEOUTS,
+): Promise<Analysis> {
   const { GEMINI_MODEL, GEMINI_FALLBACK_MODEL } = getEnv();
-  const signal = AbortSignal.timeout(TIMEOUT_MS);
+  const total = AbortSignal.timeout(timeouts.totalMs);
+  const primary = AbortSignal.any([
+    total,
+    AbortSignal.timeout(timeouts.primaryMs),
+  ]);
 
   let text: string | undefined;
   try {
-    text = await generate(GEMINI_MODEL, image, signal);
+    text = await generate(GEMINI_MODEL, image, primary);
   } catch (error) {
-    if (!isRetryable(error) || signal.aborted) {
-      throw toClientError(error, signal);
+    if (total.aborted || !shouldFallBack(error, primary)) {
+      throw toClientError(error, total);
     }
     try {
-      text = await generate(GEMINI_FALLBACK_MODEL, image, signal);
+      text = await generate(GEMINI_FALLBACK_MODEL, image, total);
     } catch (fallbackError) {
-      throw toClientError(fallbackError, signal);
+      throw toClientError(fallbackError, total);
     }
   }
   return parseAnalysis(text);
@@ -77,7 +88,8 @@ async function generate(
   return response.text;
 }
 
-function isRetryable(error: unknown): boolean {
+function shouldFallBack(error: unknown, primary: AbortSignal): boolean {
+  if (primary.aborted) return true;
   return error instanceof ApiError && FALLBACK_STATUSES.has(error.status);
 }
 

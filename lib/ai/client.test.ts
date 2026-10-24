@@ -70,7 +70,40 @@ describe("analyzeImage", () => {
     await expect(analyzeImage(image)).rejects.toBeInstanceOf(UpstreamError);
     expect(generateContent).toHaveBeenCalledTimes(1);
   });
+
+  it("falls back when the primary is too slow", async () => {
+    generateContent.mockImplementationOnce(stall).mockResolvedValueOnce(ok);
+    const timeouts = { primaryMs: 20, totalMs: 1_000 };
+
+    await expect(analyzeImage(image, timeouts)).resolves.toEqual(analysis);
+
+    const [primaryCall, fallbackCall] = generateContent.mock.calls;
+    expect(primaryCall[0].model).toBe("primary");
+    expect(fallbackCall[0].model).toBe("fallback");
+    expect(fallbackCall[0].config.abortSignal.aborted).toBe(false);
+  });
+
+  it("gives up when the total budget runs out during the fallback", async () => {
+    generateContent.mockImplementation(stall);
+    const timeouts = { primaryMs: 20, totalMs: 60 };
+
+    await expect(analyzeImage(image, timeouts)).rejects.toThrow(
+      "The model did not respond in time.",
+    );
+    expect(generateContent).toHaveBeenCalledTimes(2);
+  });
 });
+
+type GenerateParams = { config: { abortSignal: AbortSignal } };
+
+// Behaves like an overloaded model: never answers until the request is aborted.
+function stall({ config }: GenerateParams): Promise<never> {
+  return new Promise((_, reject) => {
+    config.abortSignal.addEventListener("abort", () =>
+      reject(config.abortSignal.reason),
+    );
+  });
+}
 
 describe("parseAnalysis", () => {
   it.each([
