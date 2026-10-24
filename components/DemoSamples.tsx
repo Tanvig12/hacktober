@@ -18,7 +18,7 @@ export function DemoSamples({ enabled, onChoose }: DemoSamplesProps) {
       <h2 id="samples-heading" className="text-sm font-medium text-muted">
         Try a sample
       </h2>
-      <ul className="mt-3 grid grid-cols-3 gap-3">
+      <ul className="mt-3 grid grid-cols-3 gap-3 sm:grid-cols-4">
         {DEMO_SAMPLES.map((sample) => (
           <li key={sample.id}>
             <button

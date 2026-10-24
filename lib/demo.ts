@@ -1,7 +1,15 @@
 import type { Dispatch } from "react";
+import brokenLaptop from "@/fixtures/demo/broken-laptop.json";
+import brokenUmbrella from "@/fixtures/demo/broken-umbrella.json";
+import carTyre from "@/fixtures/demo/car-tyre.json";
+import cardboardBox from "@/fixtures/demo/cardboard-box.json";
 import denimJeans from "@/fixtures/demo/denim-jeans.json";
+import glassBottle from "@/fixtures/demo/glass-bottle.json";
+import paintTin from "@/fixtures/demo/paint-tin.json";
 import petBottle from "@/fixtures/demo/pet-bottle.json";
+import rustyBicycle from "@/fixtures/demo/rusty-bicycle.json";
 import smartphone from "@/fixtures/demo/smartphone.json";
+import woodenPallet from "@/fixtures/demo/wooden-pallet.json";
 import { GatedAnalysisSchema } from "@/lib/ai/schema";
 import type { CaptureAction } from "@/lib/capture";
 import { resizeImage, type ResizedImage } from "@/lib/resize";
@@ -32,6 +40,14 @@ export const DEMO_SAMPLES: DemoSample[] = [
   sample("pet-bottle", "Plastic water bottle", petBottle),
   sample("denim-jeans", "Worn denim jeans", denimJeans),
   sample("smartphone", "Phone with a swollen battery", smartphone),
+  sample("car-tyre", "Old car tyre", carTyre),
+  sample("glass-bottle", "Empty glass bottle", glassBottle),
+  sample("wooden-pallet", "Wooden pallet", woodenPallet),
+  sample("cardboard-box", "Cardboard box", cardboardBox),
+  sample("broken-umbrella", "Broken umbrella", brokenUmbrella),
+  sample("rusty-bicycle", "Rusty bicycle", rustyBicycle),
+  sample("broken-laptop", "Laptop with a smashed screen", brokenLaptop),
+  sample("paint-tin", "Old paint tin", paintTin),
 ];
 
 export const FALLBACK_SAMPLE = DEMO_SAMPLES[0];
