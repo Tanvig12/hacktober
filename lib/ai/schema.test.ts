@@ -1,7 +1,8 @@
 import type { Schema } from "@google/genai";
 import { describe, expect, it } from "vitest";
 import { z } from "zod";
-import { AnalysisSchema, analysisResponseSchema } from "./schema";
+import { analysisResponseSchema } from "./gemini-schema";
+import { AnalysisSchema } from "./schema";
 
 type Shape = {
   type: string;

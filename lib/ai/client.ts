@@ -3,7 +3,8 @@ import { ApiError, GoogleGenAI } from "@google/genai";
 import { getEnv } from "@/lib/env";
 import type { Analysis } from "@/types/analysis";
 import { ANALYZE_REQUEST, SYSTEM_INSTRUCTION } from "./prompt";
-import { AnalysisSchema, analysisResponseSchema } from "./schema";
+import { analysisResponseSchema } from "./gemini-schema";
+import { AnalysisSchema } from "./schema";
 
 // Shared by both attempts so a fallback cannot push the request past the route's maxDuration.
 const TIMEOUT_MS = 45_000;
