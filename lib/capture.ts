@@ -5,7 +5,12 @@ export type CaptureState =
   | { status: "idle"; inputError?: string }
   | { status: "selected"; photo: ResizedImage }
   | { status: "analyzing"; photo: ResizedImage }
-  | { status: "done"; photo: ResizedImage; analysis: Analysis }
+  | {
+      status: "done";
+      photo: ResizedImage;
+      analysis: Analysis;
+      images?: string[];
+    }
   | { status: "error"; photo: ResizedImage; message: string };
 
 export type CaptureAction =
@@ -13,7 +18,7 @@ export type CaptureAction =
   | { type: "reject"; message: string }
   | { type: "reset" }
   | { type: "analyze" }
-  | { type: "succeed"; analysis: Analysis }
+  | { type: "succeed"; analysis: Analysis; images?: string[] }
   | { type: "fail"; message: string };
 
 export const initialCaptureState: CaptureState = { status: "idle" };
@@ -25,7 +30,12 @@ export function captureReducer(
 ): CaptureState {
   if (state.status === "analyzing") {
     if (action.type === "succeed") {
-      return { status: "done", photo: state.photo, analysis: action.analysis };
+      return {
+        status: "done",
+        photo: state.photo,
+        analysis: action.analysis,
+        images: action.images,
+      };
     }
     if (action.type === "fail") {
       return { status: "error", photo: state.photo, message: action.message };

@@ -9,15 +9,21 @@ export type ConceptImageState =
   | { status: "ready"; src: string }
   | { status: "failed" };
 
+// presetImages are already on hand (the demo samples), so nothing is requested for them.
 export function useConceptImages(
   objectName: string,
   concepts: Concept[],
+  presetImages?: string[],
 ): ConceptImageState[] {
   const [images, setImages] = useState<ConceptImageState[]>(() =>
-    concepts.map(() => ({ status: "pending" })),
+    concepts.map((_, index) => {
+      const src = presetImages?.[index];
+      return src ? { status: "ready", src } : { status: "pending" };
+    }),
   );
 
   useEffect(() => {
+    if (presetImages) return;
     const controller = new AbortController();
     const update = (index: number, state: ConceptImageState) => {
       if (controller.signal.aborted) return;
@@ -43,7 +49,7 @@ export function useConceptImages(
     });
 
     return () => controller.abort();
-  }, [objectName, concepts]);
+  }, [objectName, concepts, presetImages]);
 
   return images;
 }

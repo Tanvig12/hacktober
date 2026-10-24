@@ -11,10 +11,16 @@ import { SafetyBanner } from "./SafetyBanner";
 type ResultsViewProps = {
   photo: ResizedImage;
   analysis: Analysis;
+  presetImages?: string[];
   onReset: () => void;
 };
 
-export function ResultsView({ photo, analysis, onReset }: ResultsViewProps) {
+export function ResultsView({
+  photo,
+  analysis,
+  presetImages,
+  onReset,
+}: ResultsViewProps) {
   const level = safetyLevel(analysis.safety);
 
   return (
@@ -42,6 +48,7 @@ export function ResultsView({ photo, analysis, onReset }: ResultsViewProps) {
         objectName={analysis.object_name}
         concepts={analysis.concepts}
         blocked={level === "blocked"}
+        presetImages={presetImages}
       />
       <RecoveryPlan steps={analysis.recovery_plan} />
     </div>

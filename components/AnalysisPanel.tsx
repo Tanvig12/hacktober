@@ -5,9 +5,14 @@ import { ErrorNotice } from "./ErrorNotice";
 type AnalysisPanelProps = {
   state: Extract<CaptureState, { status: "selected" | "analyzing" | "error" }>;
   onAnalyze: () => void;
+  onShowSample: () => void;
 };
 
-export function AnalysisPanel({ state, onAnalyze }: AnalysisPanelProps) {
+export function AnalysisPanel({
+  state,
+  onAnalyze,
+  onShowSample,
+}: AnalysisPanelProps) {
   switch (state.status) {
     case "selected":
       return (
@@ -28,6 +33,12 @@ export function AnalysisPanel({ state, onAnalyze }: AnalysisPanelProps) {
     case "analyzing":
       return <AnalyzingStatus />;
     case "error":
-      return <ErrorNotice message={state.message} onRetry={onAnalyze} />;
+      return (
+        <ErrorNotice
+          message={state.message}
+          onRetry={onAnalyze}
+          onShowSample={onShowSample}
+        />
+      );
   }
 }

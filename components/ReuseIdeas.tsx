@@ -5,9 +5,15 @@ type ReuseIdeasProps = {
   objectName: string;
   concepts: Concept[];
   blocked: boolean;
+  presetImages?: string[];
 };
 
-export function ReuseIdeas({ objectName, concepts, blocked }: ReuseIdeasProps) {
+export function ReuseIdeas({
+  objectName,
+  concepts,
+  blocked,
+  presetImages,
+}: ReuseIdeasProps) {
   return (
     <section aria-labelledby="reuse-heading" className="mt-14">
       <h3 id="reuse-heading" className="text-lg font-semibold">
@@ -24,7 +30,11 @@ export function ReuseIdeas({ objectName, concepts, blocked }: ReuseIdeasProps) {
           recovery plan below.
         </p>
       ) : (
-        <ConceptGrid objectName={objectName} concepts={concepts} />
+        <ConceptGrid
+          objectName={objectName}
+          concepts={concepts}
+          presetImages={presetImages}
+        />
       )}
     </section>
   );

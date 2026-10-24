@@ -51,6 +51,14 @@ export function parseEnv(source: EnvSource): Env {
   );
 }
 
+// Read on its own so a demo deployment works without the Gemini key.
+export function isDemoModeEnabled(source: EnvSource = process.env): boolean {
+  return z
+    .stringbool()
+    .catch(false)
+    .parse(source.DEMO_MODE ?? "false");
+}
+
 let cached: Env | undefined;
 
 // Parsed on first use rather than at import so `next build` works without secrets.

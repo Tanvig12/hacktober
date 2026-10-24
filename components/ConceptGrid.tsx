@@ -7,10 +7,15 @@ import { ConceptCard } from "./ConceptCard";
 type ConceptGridProps = {
   objectName: string;
   concepts: Concept[];
+  presetImages?: string[];
 };
 
-export function ConceptGrid({ objectName, concepts }: ConceptGridProps) {
-  const images = useConceptImages(objectName, concepts);
+export function ConceptGrid({
+  objectName,
+  concepts,
+  presetImages,
+}: ConceptGridProps) {
+  const images = useConceptImages(objectName, concepts, presetImages);
 
   return (
     <div className="mt-5 grid gap-6 md:grid-cols-3">

@@ -1,5 +1,21 @@
 import { describe, expect, it } from "vitest";
-import { parseEnv } from "./env";
+import { isDemoModeEnabled, parseEnv } from "./env";
+
+describe("isDemoModeEnabled", () => {
+  it.each([
+    [{ DEMO_MODE: "true" }, true],
+    [{ DEMO_MODE: "1" }, true],
+    [{ DEMO_MODE: "false" }, false],
+    [{ DEMO_MODE: "maybe" }, false],
+    [{}, false],
+  ])("%j -> %s", (source, expected) => {
+    expect(isDemoModeEnabled(source)).toBe(expected);
+  });
+
+  it("does not need the Gemini key", () => {
+    expect(isDemoModeEnabled({ DEMO_MODE: "true" })).toBe(true);
+  });
+});
 
 describe("parseEnv", () => {
   it("applies defaults when only the key is set", () => {
