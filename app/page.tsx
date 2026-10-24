@@ -4,6 +4,7 @@ import { useReducer } from "react";
 import { AnalysisPanel } from "@/components/AnalysisPanel";
 import { PhotoInput } from "@/components/PhotoInput";
 import { PhotoPreview } from "@/components/PhotoPreview";
+import { ResultsView } from "@/components/ResultsView";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { errorMessage, requestAnalysis } from "@/lib/analyze-request";
@@ -54,6 +55,12 @@ export default function Home() {
           <div className="mt-10 max-w-2xl">
             <PhotoInput onSelect={handleFile} error={state.inputError} />
           </div>
+        ) : state.status === "done" ? (
+          <ResultsView
+            photo={state.photo}
+            analysis={state.analysis}
+            onReset={() => dispatch({ type: "reset" })}
+          />
         ) : (
           <div className="mt-10 grid gap-8 md:grid-cols-[2fr_3fr] md:gap-12">
             <PhotoPreview

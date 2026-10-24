@@ -3,7 +3,7 @@ import { AnalyzingStatus } from "./AnalyzingStatus";
 import { ErrorNotice } from "./ErrorNotice";
 
 type AnalysisPanelProps = {
-  state: Exclude<CaptureState, { status: "idle" }>;
+  state: Extract<CaptureState, { status: "selected" | "analyzing" | "error" }>;
   onAnalyze: () => void;
 };
 
@@ -29,11 +29,5 @@ export function AnalysisPanel({ state, onAnalyze }: AnalysisPanelProps) {
       return <AnalyzingStatus />;
     case "error":
       return <ErrorNotice message={state.message} onRetry={onAnalyze} />;
-    case "done":
-      return (
-        <pre className="max-h-[70vh] overflow-auto rounded-md border border-line bg-white p-4 font-mono text-sm">
-          {JSON.stringify(state.analysis, null, 2)}
-        </pre>
-      );
   }
 }

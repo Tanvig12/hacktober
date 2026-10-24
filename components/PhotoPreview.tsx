@@ -4,19 +4,21 @@ import { toDataUrl, type ResizedImage } from "@/lib/resize";
 type PhotoPreviewProps = {
   photo: ResizedImage;
   dimmed: boolean;
+  alt?: string;
   onChangePhoto?: () => void;
 };
 
 export function PhotoPreview({
   photo,
   dimmed,
+  alt = "Your photo",
   onChangePhoto,
 }: PhotoPreviewProps) {
   return (
     <figure>
       <Image
         src={toDataUrl(photo)}
-        alt="Your photo"
+        alt={alt}
         width={photo.width}
         height={photo.height}
         unoptimized
