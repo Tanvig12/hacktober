@@ -1,20 +1,21 @@
 "use client";
 
-import Image from "next/image";
 import { useState } from "react";
+import type { ConceptImageState } from "@/lib/use-concept-images";
+
+const IMAGE_SIZE = 768;
 
 type ConceptImageProps = {
-  src: string | null;
+  image: ConceptImageState;
   alt: string;
   fallbackLabel: string;
 };
 
-export function ConceptImage({ src, alt, fallbackLabel }: ConceptImageProps) {
-  const [status, setStatus] = useState<"loading" | "loaded" | "failed">(
-    "loading",
-  );
+export function ConceptImage({ image, alt, fallbackLabel }: ConceptImageProps) {
+  const [loaded, setLoaded] = useState(false);
+  const [broken, setBroken] = useState(false);
 
-  if (!src || status === "failed") {
+  if (image.status === "failed" || broken) {
     return (
       <div
         aria-hidden
@@ -27,24 +28,27 @@ export function ConceptImage({ src, alt, fallbackLabel }: ConceptImageProps) {
 
   return (
     <div className="relative aspect-square border-b border-line bg-paper">
-      {status === "loading" && (
+      {!loaded && (
         <div
           aria-hidden
           className="absolute inset-0 animate-pulse bg-line/50 motion-reduce:animate-none"
         />
       )}
-      <Image
-        src={src}
-        alt={alt}
-        fill
-        unoptimized
-        sizes="(min-width: 768px) 33vw, 100vw"
-        onLoad={() => setStatus("loaded")}
-        onError={() => setStatus("failed")}
-        className={`object-cover transition-opacity ${
-          status === "loaded" ? "opacity-100" : "opacity-0"
-        }`}
-      />
+      {image.status === "ready" && (
+        // eslint-disable-next-line @next/next/no-img-element -- remote and data URLs skip the image optimizer
+        <img
+          src={image.src}
+          alt={alt}
+          width={IMAGE_SIZE}
+          height={IMAGE_SIZE}
+          loading="lazy"
+          onLoad={() => setLoaded(true)}
+          onError={() => setBroken(true)}
+          className={`absolute inset-0 size-full object-cover transition-opacity ${
+            loaded ? "opacity-100" : "opacity-0"
+          }`}
+        />
+      )}
     </div>
   );
 }

@@ -2,6 +2,7 @@
 
 import { useId, useState } from "react";
 import { formatConceptMeta, KIND_LABEL } from "@/lib/format";
+import type { ConceptImageState } from "@/lib/use-concept-images";
 import type { Concept } from "@/types/analysis";
 import { ConceptImage } from "./ConceptImage";
 
@@ -9,10 +10,10 @@ const PREVIEW_STEPS = 3;
 
 type ConceptCardProps = {
   concept: Concept;
-  imageSrc: string | null;
+  image: ConceptImageState;
 };
 
-export function ConceptCard({ concept, imageSrc }: ConceptCardProps) {
+export function ConceptCard({ concept, image }: ConceptCardProps) {
   const [expanded, setExpanded] = useState(false);
   const stepsId = useId();
   const kindLabel = KIND_LABEL[concept.kind];
@@ -24,9 +25,9 @@ export function ConceptCard({ concept, imageSrc }: ConceptCardProps) {
   return (
     <article className="flex min-w-0 flex-col overflow-hidden rounded-md border border-line bg-white">
       <ConceptImage
-        key={imageSrc ?? "none"}
-        src={imageSrc}
-        alt={`${concept.title}, made from this item`}
+        key={image.status === "ready" ? image.src : image.status}
+        image={image}
+        alt={concept.title}
         fallbackLabel={kindLabel}
       />
       <div className="flex flex-1 flex-col p-5">

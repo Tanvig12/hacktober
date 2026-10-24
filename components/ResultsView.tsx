@@ -38,7 +38,11 @@ export function ResultsView({ photo, analysis, onReset }: ResultsViewProps) {
           </button>
         </div>
       </div>
-      <ReuseIdeas concepts={analysis.concepts} blocked={level === "blocked"} />
+      <ReuseIdeas
+        objectName={analysis.object_name}
+        concepts={analysis.concepts}
+        blocked={level === "blocked"}
+      />
       <RecoveryPlan steps={analysis.recovery_plan} />
     </div>
   );

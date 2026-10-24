@@ -1,12 +1,13 @@
 import type { Concept } from "@/types/analysis";
-import { ConceptCard } from "./ConceptCard";
+import { ConceptGrid } from "./ConceptGrid";
 
 type ReuseIdeasProps = {
+  objectName: string;
   concepts: Concept[];
   blocked: boolean;
 };
 
-export function ReuseIdeas({ concepts, blocked }: ReuseIdeasProps) {
+export function ReuseIdeas({ objectName, concepts, blocked }: ReuseIdeasProps) {
   return (
     <section aria-labelledby="reuse-heading" className="mt-14">
       <h3 id="reuse-heading" className="text-lg font-semibold">
@@ -23,11 +24,7 @@ export function ReuseIdeas({ concepts, blocked }: ReuseIdeasProps) {
           recovery plan below.
         </p>
       ) : (
-        <div className="mt-5 grid gap-6 md:grid-cols-3">
-          {concepts.map((concept, index) => (
-            <ConceptCard key={index} concept={concept} imageSrc={null} />
-          ))}
-        </div>
+        <ConceptGrid objectName={objectName} concepts={concepts} />
       )}
     </section>
   );
