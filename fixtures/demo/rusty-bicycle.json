@@ -1,0 +1,80 @@
+{
+  "object_name": "vintage bicycle",
+  "confidence": "high",
+  "condition": "The bicycle is heavily weathered with widespread surface rust on the steel frame, mudguards, and saddle springs. The paint is flaking and components show significant signs of long-term outdoor exposure.",
+  "materials": [
+    {
+      "part": "frame and mudguards",
+      "material": "carbon steel"
+    },
+    {
+      "part": "handlebar and rims",
+      "material": "steel and chrome plating"
+    },
+    {
+      "part": "saddle cover and padding",
+      "material": "leather and foam"
+    },
+    {
+      "part": "saddle springs",
+      "material": "spring steel"
+    },
+    {
+      "part": "tires and pedals",
+      "material": "vulcanized rubber"
+    },
+    {
+      "part": "spokes",
+      "material": "galvanized steel"
+    }
+  ],
+  "safety": {
+    "is_hazardous": true,
+    "contamination_risk": "medium",
+    "hazards": ["sharp or rusted metal", "flaking paint"],
+    "handling_warning": "Wear heavy-duty work gloves and safety glasses to protect against sharp edges, rust flakes, and flaking paint during handling."
+  },
+  "concepts": [],
+  "recovery_plan": [
+    {
+      "component": "carbon steel frame and mudguards",
+      "material": "carbon steel",
+      "action": "recycle",
+      "destination": "kabadiwala (local scrap dealer)"
+    },
+    {
+      "component": "handlebar and rims",
+      "material": "steel and chrome plating",
+      "action": "recycle",
+      "destination": "kabadiwala (local scrap dealer)"
+    },
+    {
+      "component": "saddle cover and padding",
+      "material": "leather and foam",
+      "action": "landfill",
+      "destination": "municipal dry-waste collection"
+    },
+    {
+      "component": "saddle springs",
+      "material": "spring steel",
+      "action": "recycle",
+      "destination": "kabadiwala (local scrap dealer)"
+    },
+    {
+      "component": "tires and pedals",
+      "material": "vulcanized rubber",
+      "action": "recycle",
+      "destination": "municipal dry-waste collection"
+    },
+    {
+      "component": "spokes",
+      "material": "galvanized steel",
+      "action": "recycle",
+      "destination": "kabadiwala (local scrap dealer)"
+    }
+  ],
+  "impact_estimate": {
+    "landfill_diverted_kg": 14.5,
+    "co2e_saved_kg": 28
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "object_name": "Rubber car tyre",
+  "confidence": "high",
+  "condition": "The tyre shows moderate exterior wear with accumulated dirt and weeds growing through the center, but the structural rubber tread remains intact.",
+  "materials": [
+    {
+      "part": "Outer tread and sidewall",
+      "material": "vulcanised synthetic rubber"
+    },
+    {
+      "part": "Internal belt structure",
+      "material": "steel wire"
+    },
+    {
+      "part": "Internal body plies",
+      "material": "polyester fabric"
+    }
+  ],
+  "safety": {
+    "is_hazardous": false,
+    "contamination_risk": "low",
+    "hazards": [],
+    "handling_warning": "Wash hands thoroughly after handling due to outdoor dirt and potential stagnant water inside."
+  },
+  "concepts": [
+    {
+      "kind": "repair",
+      "title": "Patch Tread Puncture",
+      "description": "Seal any minor punctures in the rubber casing to restore the tyre for non-vehicular utility uses.",
+      "difficulty": "medium",
+      "time_minutes": 45,
+      "tools": ["wire brush", "patch kit", "rubber cement"],
+      "steps": [
+        "Clean the interior and exterior of the tyre thoroughly with water and a wire brush to remove all dirt and debris.",
+        "Locate the puncture site on the inner liner of the tyre.",
+        "Buff the area around the puncture with a rasp tool from the patch kit to roughen the vulcanised rubber.",
+        "Apply a thin, even layer of rubber cement over the buffed area and allow it to dry until tacky.",
+        "Press the rubber patch firmly over the hole, rolling it outward to eliminate any air bubbles.",
+        "Let the adhesive cure completely for 24 hours before loading the tyre."
+      ],
+      "image_prompt": "A repaired black rubber car tyre with a neat patch visible on the inner wall, set against a plain neutral background with soft natural light."
+    },
+    {
+      "kind": "repurpose",
+      "title": "Garden Planter",
+      "description": "Transform the tyre into an elevated garden bed for growing flowers or ornamental plants.",
+      "difficulty": "easy",
+      "time_minutes": 30,
+      "tools": ["garden trowel", "soil", "compost", "flower seeds"],
+      "steps": [
+        "Clear all weeds and loose debris from inside the tyre cavity.",
+        "Position the tyre flat on level ground in your garden or courtyard.",
+        "Fill the bottom layer with coarse gravel or broken terracotta pieces for proper drainage.",
+        "Mix garden soil and organic compost in equal proportions.",
+        "Fill the tyre interior with the soil mixture up to two inches below the top rim.",
+        "Plant seasonal flower seeds or decorative shrubs into the soil and water gently."
+      ],
+      "image_prompt": "A black rubber car tyre repurposed as a garden planter filled with rich brown soil and small green sprouts, set against a plain neutral background with soft natural light."
+    },
+    {
+      "kind": "upcycle",
+      "title": "Jute-Woven Footstool",
+      "description": "Wrap the outer rubber surface with natural jute rope to create a stylish rustic ottoman or footstool.",
+      "difficulty": "medium",
+      "time_minutes": 120,
+      "tools": ["hot glue gun", "jute rope", "scissors", "plywood circle"],
+      "steps": [
+        "Wash the tyre thoroughly and let it dry completely in the sun.",
+        "Cut two circular pieces of plywood to fit snugly over the top and bottom openings of the tyre.",
+        "Secure the top plywood lid to the tyre rim using heavy-duty construction adhesive or screws.",
+        "Start gluing natural jute rope at the center of the top wooden lid, spiraling outward to the edge.",
+        "Continue wrapping the jute rope tightly around the outer rubber sidewall of the tyre, securing with hot glue every few rotations.",
+        "Trim the rope cleanly and glue the final end neatly underneath the bottom edge.",
+        "Apply a clear protective sealant over the jute exterior for durability."
+      ],
+      "image_prompt": "A rustic footstool made from a black rubber car tyre completely wrapped in tightly coiled natural brown jute rope, set against a plain neutral background with soft natural light."
+    }
+  ],
+  "recovery_plan": [
+    {
+      "component": "Outer tread and sidewall",
+      "material": "vulcanised synthetic rubber",
+      "action": "recycle",
+      "destination": "local kabadiwala or authorised rubber recycler"
+    },
+    {
+      "component": "Internal belt structure",
+      "material": "steel wire",
+      "action": "recycle",
+      "destination": "local kabadiwala scrap dealer"
+    },
+    {
+      "component": "Internal body plies",
+      "material": "polyester fabric",
+      "action": "landfill",
+      "destination": "municipal dry-waste collection"
+    }
+  ],
+  "impact_estimate": {
+    "landfill_diverted_kg": 8.5,
+    "co2e_saved_kg": 15.2
+  }
+}

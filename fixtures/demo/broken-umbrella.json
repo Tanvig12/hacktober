@@ -1,0 +1,112 @@
+{
+  "object_name": "broken umbrella",
+  "confidence": "high",
+  "condition": "The umbrella is inverted and structurally damaged due to wind, with bent metal ribs and torn or warped nylon canopy fabric.",
+  "materials": [
+    {
+      "part": "canopy",
+      "material": "nylon fabric"
+    },
+    {
+      "part": "ribs and shaft",
+      "material": "steel"
+    },
+    {
+      "part": "handle",
+      "material": "wood"
+    },
+    {
+      "part": "tips and joints",
+      "material": "polypropylene plastic"
+    }
+  ],
+  "safety": {
+    "is_hazardous": false,
+    "contamination_risk": "low",
+    "hazards": [],
+    "handling_warning": "Handle carefully around the bent steel ribs as the sharp metal ends might cause cuts."
+  },
+  "concepts": [
+    {
+      "kind": "repair",
+      "title": "Straighten and Restitch Ribs",
+      "description": "Restore the umbrella to working order by reshaping the bent steel ribs and re-securing the canopy fabric.",
+      "difficulty": "medium",
+      "time_minutes": 45,
+      "tools": ["pliers", "needle", "nylon thread"],
+      "steps": [
+        "Inspect the steel ribs to locate all bent sections.",
+        "Use pliers to gently bend the steel ribs back into their original straight alignment.",
+        "Check the joints and pivot points to ensure the opening mechanism slides smoothly.",
+        "Align the torn canopy corners with the ends of the repaired ribs.",
+        "Use a needle and strong nylon thread to securely stitch the nylon fabric back onto the tip pockets.",
+        "Test the opening and closing mechanism several times to ensure stability."
+      ],
+      "image_prompt": "A repaired white nylon umbrella with a wooden handle resting on a neutral stone surface, soft natural light, product photography style."
+    },
+    {
+      "kind": "repurpose",
+      "title": "Waterproof Plant Cover",
+      "description": "Use the damaged nylon canopy as a hanging or standing protective cover for delicate balcony plants during heavy monsoon rains.",
+      "difficulty": "easy",
+      "time_minutes": 15,
+      "tools": ["scissors", "twine"],
+      "steps": [
+        "Detach the nylon canopy completely from the steel ribs using scissors if needed.",
+        "Inspect the waterproof nylon fabric for any large tears and patch them if necessary.",
+        "Tie a strong piece of twine around the top opening of the canopy.",
+        "Suspend the canopy above potted plants on your balcony to shield them from heavy downpours.",
+        "Secure the bottom edges with small stones to prevent it from blowing away in the wind."
+      ],
+      "image_prompt": "A white waterproof nylon plant cover made from an umbrella canopy hanging over green potted plants on a balcony, neutral background, soft natural light."
+    },
+    {
+      "kind": "upcycle",
+      "title": "Water-Resistant Tote Bag",
+      "description": "Transform the waterproof nylon canopy into a lightweight, durable grocery tote bag.",
+      "difficulty": "medium",
+      "time_minutes": 60,
+      "tools": ["scissors", "sewing machine", "pins", "measuring tape"],
+      "steps": [
+        "Cut the nylon canopy panels apart along the seams and discard the steel and plastic frame.",
+        "Iron the nylon fabric panels on a low heat setting to remove creases.",
+        "Cut out two rectangular sections from the nylon fabric for the main body of the tote bag.",
+        "Pin the sides and bottom edges together with the right sides facing inward.",
+        "Sew along the pinned edges using a sewing machine for strong, durable seams.",
+        "Hem the top opening and sew two leftover fabric strips as handles onto the inside rim.",
+        "Turn the bag right side out and press flat."
+      ],
+      "image_prompt": "A minimalist white waterproof tote bag made from upcycled nylon umbrella fabric, displayed on a plain grey surface, soft natural light."
+    }
+  ],
+  "recovery_plan": [
+    {
+      "component": "canopy",
+      "material": "nylon fabric",
+      "action": "recycle",
+      "destination": "kabadiwala (local scrap dealer)"
+    },
+    {
+      "component": "ribs and shaft",
+      "material": "steel",
+      "action": "recycle",
+      "destination": "kabadiwala (local scrap dealer)"
+    },
+    {
+      "component": "handle",
+      "material": "wood",
+      "action": "reuse",
+      "destination": "home compost or local woodworking"
+    },
+    {
+      "component": "tips and joints",
+      "material": "polypropylene plastic",
+      "action": "recycle",
+      "destination": "municipal dry-waste collection"
+    }
+  ],
+  "impact_estimate": {
+    "landfill_diverted_kg": 0.35,
+    "co2e_saved_kg": 1.2
+  }
+}

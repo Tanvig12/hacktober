@@ -1,0 +1,74 @@
+{
+  "object_name": "Broken Laptop",
+  "confidence": "high",
+  "condition": "The laptop is severely damaged with a completely shattered display screen and a crushed, warped keyboard area exposing internal components.",
+  "materials": [
+    {
+      "part": "Screen and display panel",
+      "material": "soda-lime glass"
+    },
+    {
+      "part": "Chassis and casing",
+      "material": "ABS plastic"
+    },
+    {
+      "part": "Keyboard keys",
+      "material": "silicone"
+    },
+    {
+      "part": "Internal circuit boards",
+      "material": "fibreglass and copper"
+    },
+    {
+      "part": "Battery pack",
+      "material": "lithium-ion battery"
+    }
+  ],
+  "safety": {
+    "is_hazardous": true,
+    "contamination_risk": "low",
+    "hazards": [
+      "broken glass",
+      "e-waste and circuit boards",
+      "lithium-ion battery"
+    ],
+    "handling_warning": "Handle with thick gloves to avoid cuts from shattered glass and sharp metal, and keep away from fire due to the damaged lithium-ion battery."
+  },
+  "concepts": [],
+  "recovery_plan": [
+    {
+      "component": "Screen and display panel",
+      "material": "soda-lime glass",
+      "action": "recycle",
+      "destination": "authorised e-waste recycler"
+    },
+    {
+      "component": "Chassis and casing",
+      "material": "ABS plastic",
+      "action": "recycle",
+      "destination": "authorised e-waste recycler"
+    },
+    {
+      "component": "Keyboard keys",
+      "material": "silicone",
+      "action": "recycle",
+      "destination": "authorised e-waste recycler"
+    },
+    {
+      "component": "Internal circuit boards",
+      "material": "fibreglass and copper",
+      "action": "e-waste",
+      "destination": "authorised e-waste recycler"
+    },
+    {
+      "component": "Battery pack",
+      "material": "lithium-ion battery",
+      "action": "hazardous-drop-off",
+      "destination": "authorised e-waste recycler"
+    }
+  ],
+  "impact_estimate": {
+    "landfill_diverted_kg": 2.2,
+    "co2e_saved_kg": 28.5
+  }
+}

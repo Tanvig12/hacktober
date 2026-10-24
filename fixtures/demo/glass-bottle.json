@@ -1,0 +1,96 @@
+{
+  "object_name": "glass beer bottle",
+  "confidence": "high",
+  "condition": "The glass bottle is empty, intact with no chips or cracks, and has its paper label attached.",
+  "materials": [
+    {
+      "part": "bottle body and neck",
+      "material": "soda-lime glass"
+    },
+    {
+      "part": "label",
+      "material": "paper"
+    }
+  ],
+  "safety": {
+    "is_hazardous": false,
+    "contamination_risk": "low",
+    "hazards": [],
+    "handling_warning": "Handle with care to avoid dropping and shattering the glass."
+  },
+  "concepts": [
+    {
+      "kind": "repair",
+      "title": "Clean and Refill Storage",
+      "description": "Restore the bottle to a clean, usable storage container for non-potable liquids or oils.",
+      "difficulty": "easy",
+      "time_minutes": 15,
+      "tools": ["dish soap", "bottle brush", "warm water"],
+      "steps": [
+        "Rinse the soda-lime glass bottle thoroughly with warm water to remove any residual beverage.",
+        "Apply a few drops of dish soap inside the bottle.",
+        "Insert a bottle brush and scrub the interior walls and bottom.",
+        "Rinse multiple times with clean water until all soap bubbles are gone.",
+        "Allow the bottle to air dry completely upside down."
+      ],
+      "image_prompt": "A clean transparent soda-lime glass bottle on a neutral grey background with soft natural lighting."
+    },
+    {
+      "kind": "repurpose",
+      "title": "Bud Vase",
+      "description": "Transform the glass bottle into a minimalist single-stem flower vase.",
+      "difficulty": "easy",
+      "time_minutes": 10,
+      "tools": ["warm water", "sponge"],
+      "steps": [
+        "Wash the soda-lime glass bottle thoroughly and remove any excess moisture.",
+        "Soak the exterior paper label in warm soapy water for five minutes.",
+        "Peel off the paper label and scrub away any residual glue with a sponge.",
+        "Fill the bottle halfway with clean water.",
+        "Place a single fresh flower stem into the narrow neck of the bottle."
+      ],
+      "image_prompt": "A clear glass bottle used as a vase holding a single flower stem, set against a plain soft background."
+    },
+    {
+      "kind": "upcycle",
+      "title": "Sand-Etched Decorative Bottle",
+      "description": "Create an artistic home decor piece by etching patterns onto the exterior glass surface.",
+      "difficulty": "medium",
+      "time_minutes": 45,
+      "tools": [
+        "masking tape",
+        "craft knife",
+        "glass etching cream",
+        "paintbrush",
+        "protective gloves"
+      ],
+      "steps": [
+        "Clean and dry the soda-lime glass bottle completely.",
+        "Apply strips of masking tape around the bottle body to form geometric patterns.",
+        "Use a craft knife to carefully cut out designs from the tape.",
+        "Put on protective gloves and brush glass etching cream thickly over the exposed glass areas.",
+        "Leave the cream on for the duration specified by the manufacturer, usually about 15 minutes.",
+        "Rinse the cream off thoroughly under running water, then peel off the masking tape and wipe the glass clean."
+      ],
+      "image_prompt": "An artfully etched clear glass bottle with frosted geometric patterns on a neutral surface, soft natural lighting."
+    }
+  ],
+  "recovery_plan": [
+    {
+      "component": "bottle body and neck",
+      "material": "soda-lime glass",
+      "action": "recycle",
+      "destination": "kabadiwala (local scrap dealer) or municipal dry-waste collection"
+    },
+    {
+      "component": "label",
+      "material": "paper",
+      "action": "recycle",
+      "destination": "municipal dry-waste collection"
+    }
+  ],
+  "impact_estimate": {
+    "landfill_diverted_kg": 0.2,
+    "co2e_saved_kg": 0.3
+  }
+}

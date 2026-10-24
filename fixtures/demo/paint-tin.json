@@ -1,0 +1,40 @@
+{
+  "object_name": "vintage paint can",
+  "confidence": "high",
+  "condition": "The tin is intact with some minor surface rust on the metal rims and minor scratches on the painted paper label.",
+  "materials": [
+    {
+      "part": "can body and rims",
+      "material": "tin-plated steel"
+    },
+    {
+      "part": "label",
+      "material": "paper"
+    }
+  ],
+  "safety": {
+    "is_hazardous": true,
+    "contamination_risk": "high",
+    "hazards": ["chemicals", "paint", "Sharp or rusted metal"],
+    "handling_warning": "Wear heavy utility gloves and safety glasses when handling this container because residual paint and chemicals may be present."
+  },
+  "concepts": [],
+  "recovery_plan": [
+    {
+      "component": "can body and rims",
+      "material": "tin-plated steel",
+      "action": "hazardous-drop-off",
+      "destination": "hazardous-waste drop-off at the municipal facility"
+    },
+    {
+      "component": "label",
+      "material": "paper",
+      "action": "hazardous-drop-off",
+      "destination": "hazardous-waste drop-off at the municipal facility"
+    }
+  ],
+  "impact_estimate": {
+    "landfill_diverted_kg": 0.25,
+    "co2e_saved_kg": 0.4
+  }
+}

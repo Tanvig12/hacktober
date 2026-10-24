@@ -1,0 +1,80 @@
+{
+  "object_name": "corrugated cardboard box",
+  "confidence": "high",
+  "condition": "The cardboard box is open, clean, and structurally intact with minor creases on the flaps.",
+  "materials": [
+    {
+      "part": "box body and flaps",
+      "material": "corrugated cardboard"
+    }
+  ],
+  "safety": {
+    "is_hazardous": false,
+    "contamination_risk": "low",
+    "hazards": [],
+    "handling_warning": "Handle normally as it is clean paper material."
+  },
+  "concepts": [
+    {
+      "kind": "repair",
+      "title": "Reinforce Flaps",
+      "description": "Strengthen worn cardboard flaps with extra tape to restore the box for shipping or storage.",
+      "difficulty": "easy",
+      "time_minutes": 10,
+      "tools": ["packaging tape", "scissors"],
+      "steps": [
+        "Inspect the open box for any weak creases along the corrugated cardboard flaps.",
+        "Cut a strip of packaging tape slightly longer than the weakened flap edge.",
+        "Press the tape firmly along the outer seam of the bottom flaps.",
+        "Repeat the taping process for the top opening flaps to secure structural integrity.",
+        "Test the box by gently pressing the bottom to ensure it holds weight."
+      ],
+      "image_prompt": "A reinforced brown corrugated cardboard box with clean tape along the seams, set on a plain neutral background in soft natural light."
+    },
+    {
+      "kind": "repurpose",
+      "title": "Drawer Organiser",
+      "description": "Cut down the height of the corrugated cardboard box to create custom storage bins for wardrobe drawers.",
+      "difficulty": "easy",
+      "time_minutes": 15,
+      "tools": ["utility knife", "metal ruler", "cutting mat"],
+      "steps": [
+        "Place the corrugated cardboard box on a flat surface.",
+        "Measure and mark a horizontal cutting line around the sides at your desired drawer depth.",
+        "Use the utility knife and metal ruler to carefully slice along the marked lines.",
+        "Remove the top section of the box, leaving a clean shallow tray.",
+        "Smooth any rough cardboard edges by pressing down with the back of the knife blade."
+      ],
+      "image_prompt": "A shallow brown corrugated cardboard storage tray neatly placed on a plain background, lit with soft natural light."
+    },
+    {
+      "kind": "upcycle",
+      "title": "Woven Storage Basket",
+      "description": "Transform the corrugated cardboard into paper yarn and weave a stylish small storage basket.",
+      "difficulty": "hard",
+      "time_minutes": 120,
+      "tools": ["scissors", "craft glue", "ruler"],
+      "steps": [
+        "Disassemble the corrugated cardboard box completely so it lies flat.",
+        "Cut the flat cardboard sheets into long, uniform strips using scissors and a ruler.",
+        "Fold each cardboard strip lengthwise to create sturdy paper yarn strands.",
+        "Create a base square by intersecting several rigid cardboard strips.",
+        "Weave the remaining paper yarn strands in an over-under pattern around upright uprights.",
+        "Secure the final woven ends with craft glue and let dry completely."
+      ],
+      "image_prompt": "A small woven storage basket made from brown corrugated cardboard strips, standing on a neutral surface with soft natural lighting."
+    }
+  ],
+  "recovery_plan": [
+    {
+      "component": "box body and flaps",
+      "material": "corrugated cardboard",
+      "action": "recycle",
+      "destination": "kabadiwala or municipal dry-waste collection"
+    }
+  ],
+  "impact_estimate": {
+    "landfill_diverted_kg": 0.15,
+    "co2e_saved_kg": 0.25
+  }
+}
