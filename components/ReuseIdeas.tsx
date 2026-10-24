@@ -17,6 +17,11 @@ export function ReuseIdeas({ concepts, blocked }: ReuseIdeasProps) {
           DIY reuse isn&rsquo;t safe for this item, so no reuse ideas are shown.
           Follow the recovery plan below.
         </p>
+      ) : concepts.length === 0 ? (
+        <p className="mt-3 max-w-2xl text-muted">
+          This item is too contaminated for the reuse ideas we found. Follow the
+          recovery plan below.
+        </p>
       ) : (
         <div className="mt-5 grid gap-6 md:grid-cols-3">
           {concepts.map((concept, index) => (

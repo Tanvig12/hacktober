@@ -58,3 +58,8 @@ export const AnalysisSchema = z.object({
   recovery_plan: z.array(RecoveryStepSchema),
   impact_estimate: ImpactEstimateSchema,
 });
+
+// The safety gate can remove concepts, so the API response allows fewer than three.
+export const GatedAnalysisSchema = AnalysisSchema.extend({
+  concepts: z.array(ConceptSchema).max(3),
+});

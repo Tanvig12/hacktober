@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { AnalysisSchema } from "@/lib/ai/schema";
+import { GatedAnalysisSchema } from "@/lib/ai/schema";
 import type { ResizedImage } from "@/lib/resize";
 import type { Analysis } from "@/types/analysis";
 
@@ -44,7 +44,7 @@ export async function requestAnalysis(photo: ResizedImage): Promise<Analysis> {
     );
   }
 
-  const parsed = AnalysisSchema.safeParse(body);
+  const parsed = GatedAnalysisSchema.safeParse(body);
   if (!parsed.success) throw new AnalysisRequestError("invalid_model_output");
   return parsed.data;
 }
