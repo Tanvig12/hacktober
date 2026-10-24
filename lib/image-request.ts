@@ -11,8 +11,8 @@ const ImageResponseSchema = z.object({
 
 export type ImageRequest = { prompt: string; objectName: string; seed: number };
 
-// Slightly above the route's maxDuration, so a stalled request still ends in the fallback.
-const REQUEST_TIMEOUT_MS = 45_000;
+// Slightly above the image route's maxDuration, so a stalled request still ends in the fallback.
+const REQUEST_TIMEOUT_MS = 95_000;
 
 export async function requestImage(
   input: ImageRequest,

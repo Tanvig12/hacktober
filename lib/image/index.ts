@@ -1,14 +1,14 @@
 import "server-only";
 import { getEnv } from "@/lib/env";
 import { createCloudflareProvider } from "./cloudflare";
-import { pollinationsProvider } from "./pollinations";
+import { createPollinationsProvider } from "./pollinations";
 import type { ImageProvider } from "./types";
 
 export const IMAGE_SIZE = 768;
 
 export function getImageProvider(): ImageProvider {
   const { IMAGE_PROVIDER, CF_ACCOUNT_ID, CF_API_TOKEN } = getEnv();
-  if (IMAGE_PROVIDER !== "cloudflare") return pollinationsProvider;
+  if (IMAGE_PROVIDER !== "cloudflare") return createPollinationsProvider();
   if (!CF_ACCOUNT_ID || !CF_API_TOKEN) {
     throw new Error("Cloudflare credentials are missing.");
   }

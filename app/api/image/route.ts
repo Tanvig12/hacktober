@@ -7,7 +7,8 @@ import {
   ImageTimeoutError,
 } from "@/lib/image/types";
 
-export const maxDuration = 40;
+// Room for one wait on the Pollinations rate limit.
+export const maxDuration = 90;
 
 const MAX_SEED = 2 ** 31 - 1;
 const SEED_RANGE = `seed must be an integer from 0 to ${MAX_SEED}`;

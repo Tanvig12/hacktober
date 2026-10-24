@@ -4,9 +4,17 @@ import type { Env } from "@/lib/env";
 const env: Partial<Env> = {};
 
 vi.mock("@/lib/env", () => ({ getEnv: () => env }));
+vi.mock("./pollinations", () => ({
+  createPollinationsProvider: () => ({ name: "pollinations" }),
+}));
+vi.mock("./cloudflare", () => ({
+  createCloudflareProvider: (config: object) => ({
+    name: "cloudflare",
+    config,
+  }),
+}));
 
 const { getImageProvider, withSharedStyle } = await import("./index");
-const { pollinationsProvider } = await import("./pollinations");
 
 beforeEach(() => {
   for (const key of Object.keys(env)) delete env[key as keyof Env];
@@ -15,16 +23,19 @@ beforeEach(() => {
 describe("getImageProvider", () => {
   it("defaults to Pollinations", () => {
     env.IMAGE_PROVIDER = "pollinations";
-    expect(getImageProvider()).toBe(pollinationsProvider);
+    expect(getImageProvider()).toEqual({ name: "pollinations" });
   });
 
-  it("uses Cloudflare when configured", () => {
+  it("uses Cloudflare with the configured credentials", () => {
     Object.assign(env, {
       IMAGE_PROVIDER: "cloudflare",
       CF_ACCOUNT_ID: "acct",
       CF_API_TOKEN: "token",
     });
-    expect(getImageProvider()).not.toBe(pollinationsProvider);
+    expect(getImageProvider()).toEqual({
+      name: "cloudflare",
+      config: { accountId: "acct", apiToken: "token" },
+    });
   });
 
   it("refuses Cloudflare without credentials", () => {

@@ -32,21 +32,28 @@ export function useConceptImages(
       );
     };
 
-    // Success and failure are handled per request, so a slow or failed image
-    // never holds back another card or reaches the page.
-    concepts.forEach((concept, index) => {
-      requestImage(
-        {
-          prompt: concept.image_prompt,
-          objectName,
-          seed: conceptSeed(objectName, index),
-        },
-        controller.signal,
-      ).then(
-        (src) => update(index, { status: "ready", src }),
-        () => update(index, { status: "failed" }),
-      );
-    });
+    // One request at a time: free image tiers allow roughly one image per window,
+    // so parallel requests would mostly be refused. Each card still updates as
+    // soon as its own image arrives, and a failure only affects that card.
+    async function loadInOrder() {
+      for (const [index, concept] of concepts.entries()) {
+        if (controller.signal.aborted) return;
+        try {
+          const src = await requestImage(
+            {
+              prompt: concept.image_prompt,
+              objectName,
+              seed: conceptSeed(objectName, index),
+            },
+            controller.signal,
+          );
+          update(index, { status: "ready", src });
+        } catch {
+          update(index, { status: "failed" });
+        }
+      }
+    }
+    void loadInOrder();
 
     return () => controller.abort();
   }, [objectName, concepts, presetImages]);
